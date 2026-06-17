@@ -1,7 +1,23 @@
 :root {
-  --fitfolio-scrollbar-thumb: rgba(34, 197, 94, 0.72);
-  --fitfolio-scrollbar-thumb-hover: #22c55e;
-  --fitfolio-scrollbar-track: transparent;
+  color-scheme: dark;
+
+  --fitfolio-color-text-primary: #ffffff;
+  --fitfolio-color-text-secondary: #f5f5f5;
+  --fitfolio-color-text-tertiary: #9ca3af;
+  --fitfolio-color-text-inverse: #0a0a0a;
+  --fitfolio-color-surface-base: #000000;
+  --fitfolio-color-surface-raised: #080808;
+  --fitfolio-color-surface-hover: rgba(255, 255, 255, 0.05);
+  --fitfolio-color-surface-active: rgba(255, 255, 255, 0.08);
+  --fitfolio-color-border-subtle: rgba(255, 255, 255, 0.08);
+  --fitfolio-color-border-focus: rgba(255, 255, 255, 0.72);
+  --fitfolio-scrollbar-thumb: rgba(255, 255, 255, 0.32);
+  --fitfolio-scrollbar-thumb-hover: rgba(255, 255, 255, 0.56);
+  --fitfolio-scrollbar-track: rgba(255, 255, 255, 0.04);
+  --fitfolio-font-family-primary: Geist, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --fitfolio-radius-sm: 12px;
+  --fitfolio-radius-step7: 999px;
+  --fitfolio-shadow-inset: rgba(255, 255, 255, 0.05) 0 1px 0 0 inset;
 }
 
 html,
@@ -12,14 +28,115 @@ body,
 #table-of-contents-content,
 #chat-assistant-sheet,
 chat-assistant-sheet-content {
+  background: var(--fitfolio-color-surface-base);
+  color: var(--fitfolio-color-text-primary);
+  font-family: var(--fitfolio-font-family-primary);
   scrollbar-width: thin;
   scrollbar-color: var(--fitfolio-scrollbar-thumb) var(--fitfolio-scrollbar-track);
 }
 
+#background-color,
+#body-content {
+  background: var(--fitfolio-color-surface-base);
+}
+
+#navbar,
+#sidebar,
+#mobile-nav,
+#chat-assistant-sheet {
+  background: var(--fitfolio-color-surface-base);
+  border-color: var(--fitfolio-color-border-subtle);
+}
+
+#search-bar-entry,
+#assistant-entry,
+#chat-assistant-textarea {
+  background: var(--fitfolio-color-surface-raised);
+  border-color: var(--fitfolio-color-border-subtle);
+  box-shadow: var(--fitfolio-shadow-inset);
+}
+
+#topbar-cta-button {
+  background: var(--fitfolio-color-text-primary);
+  color: var(--fitfolio-color-text-inverse);
+  border: 1px solid var(--fitfolio-color-text-primary);
+}
+
+#topbar-cta-button * {
+  color: inherit;
+}
+
+#topbar-cta-button:hover {
+  background: var(--fitfolio-color-text-secondary);
+  border-color: var(--fitfolio-color-text-secondary);
+}
+
+#topbar-cta-button:active {
+  transform: translateY(1px);
+}
+
+#sidebar-content li[data-active],
+toc-item[data-active],
+toc-item[data-active-deepest],
+nav-anchor[data-active],
+.nav-tabs-item[data-active] {
+  color: var(--fitfolio-color-text-primary);
+}
+
+#sidebar-content li[data-active] {
+  background: var(--fitfolio-color-surface-active);
+  border-radius: var(--fitfolio-radius-sm);
+}
+
+#sidebar-content li[data-active] *,
+toc-item[data-active] *,
+toc-item[data-active-deepest] * {
+  color: var(--fitfolio-color-text-primary);
+}
+
+a,
+link,
+navbar-link,
+toc-item[data-active] a,
+toc-item[data-active-deepest] a {
+  color: var(--fitfolio-color-text-primary);
+}
+
+a:hover,
+link:hover,
+navbar-link:hover,
+#sidebar-content a:hover,
+toc-item:hover {
+  color: var(--fitfolio-color-text-secondary);
+}
+
+card,
+callout,
+#chat-assistant-textarea {
+  border-color: var(--fitfolio-color-border-subtle);
+  border-radius: var(--fitfolio-radius-sm);
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--fitfolio-color-text-primary);
+}
+
+:focus-visible,
+#search-bar-entry:focus-visible,
+#assistant-entry:focus-visible,
+#topbar-cta-button:focus-visible,
+#chat-assistant-textarea:focus-visible,
+#sidebar-content a:focus-visible {
+  outline: 2px solid var(--fitfolio-color-border-focus);
+  outline-offset: 3px;
+}
+
 @media (prefers-contrast: more) {
   :root {
-    --fitfolio-scrollbar-thumb: #22c55e;
-    --fitfolio-scrollbar-track: #03140a;
+    --fitfolio-scrollbar-thumb: #ffffff;
+    --fitfolio-scrollbar-track: #000000;
+    --fitfolio-color-border-focus: #ffffff;
   }
 }
 

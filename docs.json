@@ -4,9 +4,12 @@
   "name": "FitFolio Product Guide",
   "description": "Guia público do FitFolio para usuários, profissionais e pessoas que querem entender como usar treino, dieta, progresso e comunidade no app.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#22C55E",
-    "dark": "#0F7A3B"
+    "primary": "#FFFFFF",
+    "light": "#F5F5F5",
+    "dark": "#FAFAFA"
+  },
+  "fonts": {
+    "family": "Geist"
   },
   "icons": {
     "library": "lucide"
@@ -18,7 +21,8 @@
   },
   "favicon": "/assets/favicon.png",
   "appearance": {
-    "default": "system"
+    "default": "dark",
+    "strict": true
   },
   "navbar": {
     "links": [
