@@ -1,0 +1,108 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "FitFolio Product Guide",
+  "description": "Guia público do FitFolio para usuários, profissionais e pessoas que querem entender como usar treino, dieta, progresso e comunidade no app.",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#22C55E",
+    "dark": "#0F7A3B"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "logo": {
+    "light": "/assets/logo.png",
+    "dark": "/assets/logo_invertido.png",
+    "href": "https://fitfolio.com.br"
+  },
+  "favicon": "/assets/favicon.png",
+  "appearance": {
+    "default": "system"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Site",
+        "href": "https://fitfolio.com.br"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/fitfolio-app/fitfolio-docs",
+        "icon": "github"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Baixar app",
+      "href": "https://fitfolio.com.br/app"
+    }
+  },
+  "footer": {
+    "socials": {
+      "website": "https://fitfolio.com.br",
+      "github": "https://github.com/fitfolio-app/fitfolio-docs"
+    },
+    "links": [
+      {
+        "header": "Produto",
+        "items": [
+          {
+            "label": "Site oficial",
+            "href": "https://fitfolio.com.br"
+          },
+          {
+            "label": "Baixar app",
+            "href": "https://fitfolio.com.br/app"
+          }
+        ]
+      }
+    ]
+  },
+  "search": {
+    "prompt": "Responda em português do Brasil, com foco em uso do produto e sem expor detalhes internos de arquitetura."
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Comece aqui",
+        "icon": "sparkles",
+        "pages": [
+          "index",
+          "product-guide/getting-started",
+          "product-guide/onboarding"
+        ]
+      },
+      {
+        "group": "Guia do produto",
+        "icon": "dumbbell",
+        "pages": [
+          "product-guide/training",
+          "product-guide/nutrition",
+          "product-guide/progress",
+          "product-guide/community",
+          "product-guide/premium"
+        ]
+      },
+      {
+        "group": "Profissionais",
+        "icon": "users",
+        "pages": [
+          "professionals/overview",
+          "professionals/students",
+          "professionals/programs"
+        ]
+      },
+      {
+        "group": "Ajuda",
+        "icon": "circle-help",
+        "pages": [
+          "help/faq",
+          "help/troubleshooting",
+          "help/privacy-and-safety",
+          "help/account-deletion"
+        ]
+      }
+    ]
+  }
+}
