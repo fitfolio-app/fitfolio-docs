@@ -4,6 +4,7 @@
   --fitfolio-color-text-primary: #ffffff;
   --fitfolio-color-text-secondary: #f5f5f5;
   --fitfolio-color-text-tertiary: #9ca3af;
+  --fitfolio-color-section-label: #cbd5e1;
   --fitfolio-color-text-inverse: #0a0a0a;
   --fitfolio-color-surface-base: #000000;
   --fitfolio-color-surface-raised: #080808;
@@ -35,6 +36,16 @@ chat-assistant-sheet-content {
   font-family: var(--fitfolio-font-family-primary);
   scrollbar-width: thin;
   scrollbar-color: var(--fitfolio-scrollbar-thumb) var(--fitfolio-scrollbar-track);
+}
+
+#sidebar-content {
+  --fitfolio-scrollbar-thumb: transparent;
+  --fitfolio-scrollbar-track: transparent;
+}
+
+#sidebar-content:hover,
+#sidebar-content:focus-within {
+  --fitfolio-scrollbar-thumb: rgba(255, 255, 255, 0.28);
 }
 
 #background-color,
@@ -142,12 +153,25 @@ toc-item[data-active-deepest] * {
   color: var(--fitfolio-color-text-primary);
 }
 
+.sidebar-group-header,
 sidebar-group-header {
   gap: 0;
+  color: var(--fitfolio-color-section-label);
+  letter-spacing: 0;
 }
 
+#sidebar-content .sidebar-group-header,
+#sidebar-content .sidebar-title {
+  color: var(--fitfolio-color-section-label);
+}
+
+.sidebar-group-header svg,
 sidebar-group-header sidebar-group-icon {
   display: none;
+}
+
+#content-area .eyebrow {
+  color: var(--fitfolio-color-section-label);
 }
 
 #sidebar-content li svg,
@@ -328,6 +352,11 @@ callout,
     --fitfolio-scrollbar-thumb: #ffffff;
     --fitfolio-scrollbar-track: #000000;
     --fitfolio-color-border-focus: #ffffff;
+  }
+
+  #sidebar-content {
+    --fitfolio-scrollbar-thumb: #ffffff;
+    --fitfolio-scrollbar-track: #000000;
   }
 }
 
