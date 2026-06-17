@@ -1,18 +1,33 @@
 :root {
   color-scheme: dark;
 
-  --fitfolio-color-text-primary: #ffffff;
-  --fitfolio-color-text-secondary: #f5f5f5;
+  --fitfolio-color-text-primary: #f8fafc;
+  --fitfolio-color-text-secondary: #cbd5e1;
   --fitfolio-color-text-tertiary: #9ca3af;
-  --fitfolio-color-section-label: #cbd5e1;
+  --fitfolio-color-text-muted: #737b88;
+  --fitfolio-color-section-label: #b7c1d2;
+  --fitfolio-color-heading: #ffffff;
+  --fitfolio-color-body: #c3cad5;
+  --fitfolio-color-body-strong: #f8fafc;
+  --fitfolio-color-link: #dbe7f7;
   --fitfolio-color-text-inverse: #0a0a0a;
   --fitfolio-color-surface-base: #000000;
   --fitfolio-color-surface-raised: #080808;
+  --fitfolio-color-surface-elevated: #0d0d10;
   --fitfolio-color-surface-hover: rgba(255, 255, 255, 0.05);
   --fitfolio-color-surface-active: rgba(255, 255, 255, 0.08);
   --fitfolio-color-border-subtle: rgba(255, 255, 255, 0.08);
+  --fitfolio-color-border-muted: rgba(255, 255, 255, 0.055);
   --fitfolio-color-border-focus: rgba(255, 255, 255, 0.72);
   --fitfolio-color-button-shadow: rgba(255, 255, 255, 0.16);
+  --fitfolio-accent-start: #e5e7eb;
+  --fitfolio-accent-training: #f59e0b;
+  --fitfolio-accent-nutrition: #60a5fa;
+  --fitfolio-accent-progress: #a78bfa;
+  --fitfolio-accent-community: #f472b6;
+  --fitfolio-accent-premium: #fbbf24;
+  --fitfolio-accent-professionals: #c4b5fd;
+  --fitfolio-accent-support: #93c5fd;
   --fitfolio-scrollbar-thumb: rgba(255, 255, 255, 0.32);
   --fitfolio-scrollbar-thumb-hover: rgba(255, 255, 255, 0.56);
   --fitfolio-scrollbar-track: rgba(255, 255, 255, 0.04);
@@ -32,10 +47,31 @@ body,
 #chat-assistant-sheet,
 chat-assistant-sheet-content {
   background: var(--fitfolio-color-surface-base);
-  color: var(--fitfolio-color-text-primary);
+  color: var(--fitfolio-color-text-secondary);
   font-family: var(--fitfolio-font-family-primary);
   scrollbar-width: thin;
   scrollbar-color: var(--fitfolio-scrollbar-thumb) var(--fitfolio-scrollbar-track);
+}
+
+.prose,
+.dark .dark\:prose-invert,
+.dark\:prose-invert {
+  --tw-prose-body: var(--fitfolio-color-body);
+  --tw-prose-headings: var(--fitfolio-color-heading);
+  --tw-prose-lead: var(--fitfolio-color-text-secondary);
+  --tw-prose-links: var(--fitfolio-color-link);
+  --tw-prose-bold: var(--fitfolio-color-body-strong);
+  --tw-prose-counters: var(--fitfolio-color-text-muted);
+  --tw-prose-bullets: var(--fitfolio-color-text-muted);
+  --tw-prose-hr: var(--fitfolio-color-border-subtle);
+  --tw-prose-quotes: var(--fitfolio-color-body-strong);
+  --tw-prose-quote-borders: var(--fitfolio-color-border-subtle);
+  --tw-prose-captions: var(--fitfolio-color-text-tertiary);
+  --tw-prose-code: var(--fitfolio-color-link);
+  --tw-prose-pre-code: var(--fitfolio-color-text-secondary);
+  --tw-prose-pre-bg: var(--fitfolio-color-surface-elevated);
+  --tw-prose-th-borders: var(--fitfolio-color-border-subtle);
+  --tw-prose-td-borders: var(--fitfolio-color-border-muted);
 }
 
 #sidebar-content {
@@ -143,8 +179,56 @@ nav-anchor[data-active],
 }
 
 #sidebar-content li[data-active] {
-  background: var(--fitfolio-color-surface-active);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.055)),
+    var(--fitfolio-color-surface-active);
   border-radius: var(--fitfolio-radius-sm);
+  box-shadow:
+    inset 1px 0 0 rgba(255, 255, 255, 0.2),
+    var(--fitfolio-shadow-inset);
+}
+
+#sidebar-content li:has(a[href="/product-guide/training"]) {
+  --fitfolio-nav-accent: var(--fitfolio-accent-training);
+}
+
+#sidebar-content li:has(a[href="/product-guide/nutrition"]) {
+  --fitfolio-nav-accent: var(--fitfolio-accent-nutrition);
+}
+
+#sidebar-content li:has(a[href="/product-guide/progress"]) {
+  --fitfolio-nav-accent: var(--fitfolio-accent-progress);
+}
+
+#sidebar-content li:has(a[href="/product-guide/community"]) {
+  --fitfolio-nav-accent: var(--fitfolio-accent-community);
+}
+
+#sidebar-content li:has(a[href="/product-guide/premium"]) {
+  --fitfolio-nav-accent: var(--fitfolio-accent-premium);
+}
+
+#sidebar-content li:has(a[href^="/professionals"]) {
+  --fitfolio-nav-accent: var(--fitfolio-accent-professionals);
+}
+
+#sidebar-content li:has(a[href^="/help"]) {
+  --fitfolio-nav-accent: var(--fitfolio-accent-support);
+}
+
+@supports (color: color-mix(in srgb, white, black)) {
+  #sidebar-content li[data-active] {
+    background:
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--fitfolio-nav-accent, #ffffff) 18%, transparent),
+        rgba(255, 255, 255, 0.055)
+      ),
+      var(--fitfolio-color-surface-active);
+    box-shadow:
+      inset 1px 0 0 color-mix(in srgb, var(--fitfolio-nav-accent, #ffffff) 52%, transparent),
+      var(--fitfolio-shadow-inset);
+  }
 }
 
 #sidebar-content li[data-active] *,
@@ -174,6 +258,85 @@ sidebar-group-header sidebar-group-icon {
   color: var(--fitfolio-color-section-label);
 }
 
+#content-area h1,
+#content-area .mdx-content :is(h2, h3, h4) {
+  color: var(--fitfolio-color-heading);
+  letter-spacing: 0;
+}
+
+#content-area .mdx-content h2 {
+  margin-block-start: 3rem;
+}
+
+#content-area .mdx-content h2:first-child {
+  margin-block-start: 0;
+}
+
+#content-area .mdx-content :is(p, li, td, blockquote, figcaption),
+#content-area .mdx-content > span:not(.cursor-pointer) {
+  color: var(--fitfolio-color-body);
+}
+
+#content-area header .prose p {
+  color: var(--fitfolio-color-text-secondary);
+}
+
+#content-area .mdx-content :is(strong, b),
+#content-area .mdx-content td:first-child {
+  color: var(--fitfolio-color-body-strong);
+  font-weight: 650;
+}
+
+#content-area .mdx-content :is(ul, ol) li::marker {
+  color: var(--fitfolio-color-text-muted);
+}
+
+#content-area .mdx-content a:not([href^="#"]) {
+  color: var(--fitfolio-color-link);
+  text-decoration-color: rgba(219, 231, 247, 0.42);
+  text-underline-offset: 3px;
+}
+
+#content-area .mdx-content a:not([href^="#"]):hover {
+  color: var(--fitfolio-color-heading);
+  text-decoration-color: currentColor;
+}
+
+#content-area .mdx-content table {
+  overflow: hidden;
+  border: 1px solid var(--fitfolio-color-border-subtle);
+  border-radius: var(--fitfolio-radius-sm);
+  background: var(--fitfolio-color-surface-raised);
+  box-shadow: var(--fitfolio-shadow-inset);
+}
+
+#content-area .mdx-content table th {
+  color: var(--fitfolio-color-section-label);
+  background: rgba(255, 255, 255, 0.035);
+  border-color: var(--fitfolio-color-border-subtle);
+  font-weight: 700;
+}
+
+#content-area .mdx-content table td {
+  border-color: var(--fitfolio-color-border-muted);
+}
+
+#content-area .mdx-content table tbody tr:nth-child(odd) td {
+  background: rgba(255, 255, 255, 0.016);
+}
+
+#content-area .mdx-content table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--fitfolio-color-text-primary);
+}
+
+#content-area .mdx-content :not(pre) > code {
+  color: var(--fitfolio-color-link);
+  border: 1px solid var(--fitfolio-color-border-muted);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
 #sidebar-content li svg,
 #sidebar-content li icon {
   color: currentColor;
@@ -182,20 +345,75 @@ sidebar-group-header sidebar-group-icon {
   opacity: 0.88;
 }
 
-a,
-link,
-navbar-link,
+#sidebar-content a {
+  color: var(--fitfolio-color-text-tertiary);
+  transition:
+    color 200ms ease,
+    background-color 200ms ease;
+}
+
+.navbar-link,
+.navbar-link a,
+.nav-tabs-item:not([data-active]) {
+  color: var(--fitfolio-color-text-tertiary);
+}
+
+#sidebar-content a[href="/product-guide/training"] svg,
+#sidebar-content a[href="/product-guide/training"] icon {
+  color: var(--fitfolio-accent-training);
+}
+
+#sidebar-content a[href="/product-guide/nutrition"] svg,
+#sidebar-content a[href="/product-guide/nutrition"] icon {
+  color: var(--fitfolio-accent-nutrition);
+}
+
+#sidebar-content a[href="/product-guide/progress"] svg,
+#sidebar-content a[href="/product-guide/progress"] icon {
+  color: var(--fitfolio-accent-progress);
+}
+
+#sidebar-content a[href="/product-guide/community"] svg,
+#sidebar-content a[href="/product-guide/community"] icon {
+  color: var(--fitfolio-accent-community);
+}
+
+#sidebar-content a[href="/product-guide/premium"] svg,
+#sidebar-content a[href="/product-guide/premium"] icon {
+  color: var(--fitfolio-accent-premium);
+}
+
+#sidebar-content a[href^="/professionals"] svg,
+#sidebar-content a[href^="/professionals"] icon {
+  color: var(--fitfolio-accent-professionals);
+}
+
+#sidebar-content a[href^="/help"] svg,
+#sidebar-content a[href^="/help"] icon {
+  color: var(--fitfolio-accent-support);
+}
+
 toc-item[data-active] a,
-toc-item[data-active-deepest] a {
+toc-item[data-active-deepest] a,
+#table-of-contents-content a[class*="text-primary"] {
   color: var(--fitfolio-color-text-primary);
 }
 
 a:hover,
 link:hover,
-navbar-link:hover,
+.navbar-link:hover,
 #sidebar-content a:hover,
 toc-item:hover {
   color: var(--fitfolio-color-text-secondary);
+}
+
+#table-of-contents-content h2,
+#table-of-contents-content button {
+  color: var(--fitfolio-color-text-secondary);
+}
+
+#table-of-contents-content a {
+  color: var(--fitfolio-color-text-tertiary);
 }
 
 card,
