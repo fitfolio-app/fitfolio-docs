@@ -1,0 +1,75 @@
+:root {
+  --fitfolio-scrollbar-thumb: rgba(34, 197, 94, 0.72);
+  --fitfolio-scrollbar-thumb-hover: #22c55e;
+  --fitfolio-scrollbar-track: transparent;
+}
+
+html,
+body,
+#body-content,
+#content-area,
+#sidebar-content,
+#table-of-contents-content,
+#chat-assistant-sheet,
+chat-assistant-sheet-content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--fitfolio-scrollbar-thumb) var(--fitfolio-scrollbar-track);
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --fitfolio-scrollbar-thumb: #22c55e;
+    --fitfolio-scrollbar-track: #03140a;
+  }
+}
+
+@supports not (scrollbar-color: auto) {
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  #body-content::-webkit-scrollbar,
+  #content-area::-webkit-scrollbar,
+  #sidebar-content::-webkit-scrollbar,
+  #table-of-contents-content::-webkit-scrollbar,
+  #chat-assistant-sheet::-webkit-scrollbar,
+  chat-assistant-sheet-content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  html::-webkit-scrollbar-track,
+  body::-webkit-scrollbar-track,
+  #body-content::-webkit-scrollbar-track,
+  #content-area::-webkit-scrollbar-track,
+  #sidebar-content::-webkit-scrollbar-track,
+  #table-of-contents-content::-webkit-scrollbar-track,
+  #chat-assistant-sheet::-webkit-scrollbar-track,
+  chat-assistant-sheet-content::-webkit-scrollbar-track {
+    background: var(--fitfolio-scrollbar-track);
+  }
+
+  html::-webkit-scrollbar-thumb,
+  body::-webkit-scrollbar-thumb,
+  #body-content::-webkit-scrollbar-thumb,
+  #content-area::-webkit-scrollbar-thumb,
+  #sidebar-content::-webkit-scrollbar-thumb,
+  #table-of-contents-content::-webkit-scrollbar-thumb,
+  #chat-assistant-sheet::-webkit-scrollbar-thumb,
+  chat-assistant-sheet-content::-webkit-scrollbar-thumb {
+    background: var(--fitfolio-scrollbar-thumb);
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background-clip: content-box;
+  }
+
+  html::-webkit-scrollbar-thumb:hover,
+  body::-webkit-scrollbar-thumb:hover,
+  #body-content::-webkit-scrollbar-thumb:hover,
+  #content-area::-webkit-scrollbar-thumb:hover,
+  #sidebar-content::-webkit-scrollbar-thumb:hover,
+  #table-of-contents-content::-webkit-scrollbar-thumb:hover,
+  #chat-assistant-sheet::-webkit-scrollbar-thumb:hover,
+  chat-assistant-sheet-content::-webkit-scrollbar-thumb:hover {
+    background: var(--fitfolio-scrollbar-thumb-hover);
+    background-clip: content-box;
+  }
+}
