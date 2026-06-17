@@ -67,40 +67,60 @@
     "prompt": "Buscar: Foco em uso do produto."
   },
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Comece aqui",
-        "pages": [
-          "index",
-          "product-guide/getting-started",
-          "product-guide/onboarding"
+        "tab": "Comece aqui",
+        "groups": [
+          {
+            "group": "Primeiro acesso",
+            "pages": [
+              "index",
+              "product-guide/getting-started",
+              "product-guide/onboarding"
+            ]
+          }
         ]
       },
       {
-        "group": "Guia do produto",
-        "pages": [
-          "product-guide/training",
-          "product-guide/nutrition",
-          "product-guide/progress",
-          "product-guide/community",
-          "product-guide/premium"
+        "tab": "Guia do produto",
+        "groups": [
+          {
+            "group": "Módulos principais",
+            "pages": [
+              "product-guide/training",
+              "product-guide/nutrition",
+              "product-guide/progress",
+              "product-guide/community",
+              "product-guide/premium"
+            ]
+          }
         ]
       },
       {
-        "group": "Profissionais",
-        "pages": [
-          "professionals/overview",
-          "professionals/students",
-          "professionals/programs"
+        "tab": "Profissionais",
+        "groups": [
+          {
+            "group": "Acompanhamento",
+            "pages": [
+              "professionals/overview",
+              "professionals/students",
+              "professionals/programs"
+            ]
+          }
         ]
       },
       {
-        "group": "Ajuda",
-        "pages": [
-          "help/faq",
-          "help/troubleshooting",
-          "help/privacy-and-safety",
-          "help/account-deletion"
+        "tab": "Ajuda",
+        "groups": [
+          {
+            "group": "Suporte",
+            "pages": [
+              "help/faq",
+              "help/troubleshooting",
+              "help/privacy-and-safety",
+              "help/account-deletion"
+            ]
+          }
         ]
       }
     ]
