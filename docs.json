@@ -64,13 +64,12 @@
     ]
   },
   "search": {
-    "prompt": "Responda em português do Brasil, com foco em uso do produto e sem expor detalhes internos de arquitetura."
+    "prompt": "Buscar: Foco em uso do produto."
   },
   "navigation": {
     "groups": [
       {
         "group": "Comece aqui",
-        "icon": "sparkles",
         "pages": [
           "index",
           "product-guide/getting-started",
@@ -79,7 +78,6 @@
       },
       {
         "group": "Guia do produto",
-        "icon": "dumbbell",
         "pages": [
           "product-guide/training",
           "product-guide/nutrition",
@@ -90,7 +88,6 @@
       },
       {
         "group": "Profissionais",
-        "icon": "users",
         "pages": [
           "professionals/overview",
           "professionals/students",
@@ -99,7 +96,6 @@
       },
       {
         "group": "Ajuda",
-        "icon": "circle-help",
         "pages": [
           "help/faq",
           "help/troubleshooting",

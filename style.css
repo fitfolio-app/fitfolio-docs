@@ -11,11 +11,13 @@
   --fitfolio-color-surface-active: rgba(255, 255, 255, 0.08);
   --fitfolio-color-border-subtle: rgba(255, 255, 255, 0.08);
   --fitfolio-color-border-focus: rgba(255, 255, 255, 0.72);
+  --fitfolio-color-button-shadow: rgba(255, 255, 255, 0.16);
   --fitfolio-scrollbar-thumb: rgba(255, 255, 255, 0.32);
   --fitfolio-scrollbar-thumb-hover: rgba(255, 255, 255, 0.56);
   --fitfolio-scrollbar-track: rgba(255, 255, 255, 0.04);
   --fitfolio-font-family-primary: Geist, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --fitfolio-radius-sm: 12px;
+  --fitfolio-radius-xl: 16px;
   --fitfolio-radius-step7: 999px;
   --fitfolio-shadow-inset: rgba(255, 255, 255, 0.05) 0 1px 0 0 inset;
 }
@@ -56,23 +58,65 @@ chat-assistant-sheet-content {
   box-shadow: var(--fitfolio-shadow-inset);
 }
 
+nav-logo {
+  min-inline-size: 34px;
+}
+
+nav-logo img,
+nav-logo svg {
+  inline-size: 32px;
+  block-size: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.12));
+}
+
 #topbar-cta-button {
+  min-block-size: 36px;
+  min-inline-size: 116px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 18px;
   background: var(--fitfolio-color-text-primary);
   color: var(--fitfolio-color-text-inverse);
   border: 1px solid var(--fitfolio-color-text-primary);
+  border-radius: var(--fitfolio-radius-step7);
+  box-shadow:
+    var(--fitfolio-shadow-inset),
+    0 10px 28px rgba(255, 255, 255, 0.08),
+    0 0 0 1px var(--fitfolio-color-button-shadow);
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1;
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
 }
 
 #topbar-cta-button * {
   color: inherit;
+  line-height: inherit;
 }
 
 #topbar-cta-button:hover {
   background: var(--fitfolio-color-text-secondary);
   border-color: var(--fitfolio-color-text-secondary);
+  box-shadow:
+    var(--fitfolio-shadow-inset),
+    0 14px 34px rgba(255, 255, 255, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
 }
 
 #topbar-cta-button:active {
-  transform: translateY(1px);
+  box-shadow:
+    var(--fitfolio-shadow-inset),
+    0 6px 18px rgba(255, 255, 255, 0.08),
+    0 0 0 1px var(--fitfolio-color-button-shadow);
+  transform: translateY(0);
 }
 
 #sidebar-content li[data-active],
@@ -92,6 +136,22 @@ nav-anchor[data-active],
 toc-item[data-active] *,
 toc-item[data-active-deepest] * {
   color: var(--fitfolio-color-text-primary);
+}
+
+sidebar-group-header {
+  gap: 0;
+}
+
+sidebar-group-header sidebar-group-icon {
+  display: none;
+}
+
+#sidebar-content li svg,
+#sidebar-content li icon {
+  color: currentColor;
+  inline-size: 16px;
+  block-size: 16px;
+  opacity: 0.88;
 }
 
 a,
@@ -137,6 +197,14 @@ callout,
     --fitfolio-scrollbar-thumb: #ffffff;
     --fitfolio-scrollbar-track: #000000;
     --fitfolio-color-border-focus: #ffffff;
+  }
+}
+
+@media (pointer: coarse) {
+  #topbar-cta-button {
+    min-block-size: 44px;
+    min-inline-size: 128px;
+    padding-inline: 20px;
   }
 }
 
