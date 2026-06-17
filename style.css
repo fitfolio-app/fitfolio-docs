@@ -58,14 +58,18 @@ chat-assistant-sheet-content {
   box-shadow: var(--fitfolio-shadow-inset);
 }
 
-nav-logo {
-  min-inline-size: 34px;
+a:has(> img.nav-logo) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: 46px;
+  min-block-size: 42px;
 }
 
-nav-logo img,
-nav-logo svg {
-  inline-size: 32px;
-  block-size: 32px;
+img.nav-logo {
+  inline-size: auto;
+  block-size: 42px;
+  max-block-size: 42px;
   object-fit: contain;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.12));
 }
@@ -336,6 +340,17 @@ callout,
 }
 
 @media (max-width: 720px) {
+  a:has(> img.nav-logo) {
+    min-inline-size: 40px;
+    min-block-size: 38px;
+  }
+
+  img.nav-logo {
+    inline-size: auto;
+    block-size: 38px;
+    max-block-size: 38px;
+  }
+
   .training-timeline {
     margin-block: 24px 36px;
   }
